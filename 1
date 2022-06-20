@@ -1,0 +1,51 @@
+using System;
+
+namespace _4._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+abstract class Gadget
+{
+    public int price;
+    public abstract void reboot();
+}
+class PC : Gadget
+{
+    public PC(int currentprice)
+    {
+        price = currentprice;
+    }
+    public override void reboot()
+    {
+        Console.WriteLine("Персональний комп'ютер перезавантажено");
+    }
+}
+class SystemB : PC
+{
+    public bool connected = true;
+    public SystemB(int price) : base(price)
+    {
+        this.price = price;
+    }
+}
+class Screen : PC
+{
+    public bool connected = true;
+    public Screen(int price) : base(price)
+    {
+        this.price = price;
+    }
+}
+class Tablet : Gadget
+{
+    public override void reboot()
+    {
+        Console.WriteLine("Смартфон перезавантажено");
+    }
+}
